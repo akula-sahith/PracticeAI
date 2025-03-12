@@ -141,67 +141,211 @@ body {
     height: 100vh;
     margin: 0;
 }
-
-/* ATS Analysis Container */
-.ats-analysis {
-    width: 90%;
-    max-width: 1200px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+/* ATS Tracker Page */
+.ats-tracker {
     text-align: center;
-}
-
-/* Main Title */
-h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* ATS Score */
-#ats-score {
-    font-size: 26px;
-    font-weight: bold;
-    color: #00796B;
-}
-
-/* Score Interpretation */
-#score-interpretation {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Chart Grid */
-.chart-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px 0;
-}
-
-/* Chart Styling */
-canvas {
-    background: #ffffff;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 600px;
+    margin: 120px auto;
+}
+
+.ats-tracker:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 /* Back Button */
 .back-btn {
-    background: #00796B;
+    background: transparent;
     color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
 }
 
 .back-btn:hover {
-    background: #004D40;
+    background: white;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Upload Container */
+.upload-container {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+}
+
+.upload-container:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Upload Button */
+.upload-label {
+    cursor: pointer;
+    padding: 14px 22px;
+    border-radius: 12px;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.upload-label:hover {
+    background: #ff47ff;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(255, 71, 255, 0.4);
+}
+
+/* File Preview */
+.file-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+/* File Icon */
+.file-icon {
+    font-size: 22px;
+    color: #ff47ff;
+}
+
+/* Analyzing Text */
+.analyzing-text {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: yellow;
+}
+
+/* Analysis Result */
+.analysis-result {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Success Icon */
+.success-icon {
+    color: #00ff00;
+    font-size: 26px;
+}
+
+/* Analyze Resume Button */
+.analyze-btn {
+    background: #ff47ff;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.analyze-btn:hover {
+    background: white;
+    color: #ff47ff;
+    box-shadow: 0px 4px 10px rgba(255, 71, 255, 0.4);
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, #16002D 0%, #300058 100%);
+    color: white;
+    text-align: center;
+}/* ATS Analysis Page - Professional & Responsive */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, #16002D 0%, #300058 100%);
+    color: white;
+    text-align: center;
+}
+
+.ats-analysis {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Back Button */
+.back-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Score Interpretation */
+#score-interpretation {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
 }
