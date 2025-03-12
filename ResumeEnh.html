@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Optimizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(180deg, #16002D 0%, #300058 100%);
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .resume-optimizer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            resize: none;
+        }
+
+        .upload-container {
+            margin-top: 15px;
+        }
+
+        .upload-label {
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: white;
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s ease-in-out;
+            justify-content: center;
+        }
+
+        .upload-label:hover {
+            background: #ff47ff;
+            color: white;
+        }
+
+        .file-input {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid white;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .optimize-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #ff47ff;
+            color: white;
+            transition: background 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .optimize-btn:hover {
+            background: white;
+            color: black;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .result-container ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="resume-optimizer">
+        <h2>Optimize Your Resume for a Job</h2>
+        <p>Paste the job description below and upload your resume. We'll optimize it for better matching!</p>
+
+        <textarea id="job-description" placeholder="Paste job description here..." rows="6"></textarea>
+        
+        <div class="upload-container">
+            <label for="resumeUpload" class="upload-label">
+                <i class="fas fa-upload upload-icon"></i>
+                <span>Upload Your Resume</span>
+            </label>
+            <input type="file" id="resumeUpload" class="file-input" accept=".pdf,.docx">
+        </div>
+
+        <button class="optimize-btn" onclick="optimizeResume()">Optimize Resume</button>
+
+        <div id="optimized-result" class="result-container" style="display: none;">
+            <h3>Optimized Resume Details</h3>
+            <p><strong>Suggested Improvements:</strong></p>
+            <ul id="improvement-list"></ul>
+        </div>
+    </section>
+</body>
+</html>

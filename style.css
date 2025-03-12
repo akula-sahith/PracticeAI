@@ -36,7 +36,9 @@
     filter: brightness(0) invert(1); /* Converts image color to white */
   }
   
-  
+  a{
+    text-decoration: none;
+  }
   .nav-links {
     list-style: none;
     display: flex;
