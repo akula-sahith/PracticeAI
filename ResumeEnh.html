@@ -29,6 +29,25 @@
             max-width: 500px;
             width: 100%;
             text-align: center;
+            position: relative;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: black;
         }
 
         h2 {
@@ -116,6 +135,7 @@
 </head>
 <body>
     <section class="resume-optimizer">
+        <button class="home-btn" onclick="goHome()">Home</button>
         <h2>Optimize Your Resume for a Job</h2>
         <p>Paste the job description below and upload your resume. We'll optimize it for better matching!</p>
 
@@ -137,5 +157,11 @@
             <ul id="improvement-list"></ul>
         </div>
     </section>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career AI Guidance Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <button class="back-home" onclick="goHome()">Home</button>
+        <h2>Career AI Guidance Chatbot</h2>
+        <div class="chat-box" id="chat-box">
+            <div class="message bot"><strong>AI Bot:</strong> Hello! Welcome to the Career AI Guidance Chatbot. What is your name?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your response...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+
+        const conversation = {
+            "What is your highest qualification?": "Your highest qualification should be mentioned in the education section of your resume. If you have multiple degrees, list the most relevant one first.",
+            "What field are you looking to work in?": "Each industry has specific resume requirements. For example, tech resumes should highlight skills and projects, while marketing resumes should emphasize creativity and achievements.",
+            "Do you have any previous work experience?": "If you do, list your experiences in reverse chronological order, focusing on key achievements rather than just responsibilities.",
+            "What are your top skills?": "Soft skills like communication and leadership are valuable, but technical skills specific to your job role are essential for ATS compatibility.",
+            "Are you looking for an internship or a full-time job?": "Internships should focus on academic achievements and projects, while full-time job resumes should emphasize work experience and career progression.",
+            "Would you like resume formatting tips?": "Use a clean, professional format with clear headings. Avoid fancy fonts and excessive design elements as they may confuse ATS systems.",
+            "Do you need help optimizing your resume for ATS?": "Use industry-specific keywords from the job description and ensure your resume is saved in an ATS-friendly format like .docx or .pdf.",
+            "How many years of experience do you have?": "Tailor your resume based on experience. If you have 5+ years, focus on leadership roles. If less, highlight skills and projects.",
+            "Would you like tips on writing a strong summary statement?": "A resume summary should be 2-3 sentences long and highlight your top skills, experience, and career goals.",
+            "Do you want to know about keywords that can improve your resume?": "Yes! Always extract keywords from the job posting and incorporate them naturally into your resume.",
+            "Have you ever used a professional resume writer or career coach?": "They can be helpful if you're struggling to showcase your strengths effectively.",
+            "Would you like guidance on writing a compelling cover letter?": "Your cover letter should be personalized for each job, mentioning how your skills align with the company's needs.",
+            "How do you typically approach job applications?": "Job boards, referrals, and networking on LinkedIn are effective ways to land interviews.",
+            "Do you need help tailoring your resume for different job applications?": "Always customize your resume for each job by highlighting the most relevant skills and experiences.",
+            "Would you like strategies for networking and improving your LinkedIn profile?": "Ensure your LinkedIn matches your resume, join industry groups, and engage with professional content.",
+            "Have you encountered difficulties getting interview calls despite having experience?": "This may be due to an ATS-unfriendly resume. Try tweaking your format and adding more relevant keywords.",
+            "Do you need help preparing for behavioral or technical interview questions?": "Yes! Use the STAR method (Situation, Task, Action, Result) for behavioral answers, and practice coding/technical questions for industry roles.",
+            "Would you like guidance on salary negotiation techniques?": "Research industry standards and confidently state your expected salary based on experience and skills.",
+            "What career goals do you have for the next five years?": "Having a clear career goal helps shape your resume and job search strategy. Consider where you want to be and what skills you need to get there."
+        };
+
+        const questions = Object.keys(conversation);
+
+        function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (userInput.trim() === "") return;
+
+            addMessage("You", userInput);
+            document.getElementById("user-input").value = "";
+
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * questions.length);
+                const botReply = conversation[questions[randomIndex]];
+                addMessage("AI Bot", botReply);
+            }, 1000);
+        }
+
+        function addMessage(sender, message) {
+            const chatBox = document.getElementById("chat-box");
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("message", sender === "You" ? "user" : "bot");
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
