@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</head>
+<body>
+
+    <div class="ats-tracker">
+        <button class="back-btn" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> Back to Features
+        </button>
+
+        <h2>ATS Resume Checker</h2>
+        <p>Upload your resume to check its **ATS compatibility**.</p>
+
+        <div class="upload-container">
+            <label for="resumeUpload" class="upload-label">
+                <i class="fas fa-upload upload-icon"></i>
+                <span>Click to Upload Resume</span>
+            </label>
+            <input type="file" id="resumeUpload" hidden onchange="handleFileChange(event)">
+        </div>
+
+        <div id="file-preview" class="file-preview" style="display: none;">
+            <i class="fas fa-file-alt file-icon"></i>
+            <p id="file-name"></p>
+        </div>
+
+        <button class="analyze-btn" id="analyzeButton" onclick="analyzeResume()" style="display: none;">
+            Analyze Resume
+        </button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function handleFileChange(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById("file-preview").style.display = "flex";
+                document.getElementById("file-name").textContent = file.name;
+                document.getElementById("analyzeButton").style.display = "block";
+            }
+        }
+
+        function analyzeResume() {
+            window.location.href = "ats-analysis.html"; // Redirect to analysis page
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Score Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="ats-analysis">
+        <h2>ATS Resume Analysis</h2>
+        <p>Your resume has been analyzed based on <strong>8 key factors</strong>.</p>
+
+        <!-- General ATS Score -->
+        <h3>📊 General ATS Score: <span id="ats-score">85%</span></h3>
+        <p id="score-interpretation">🔥 Excellent – Highly optimized, strong structure, and great keyword match.</p>
+
+        <!-- Grid Layout for Charts -->
+        <div class="chart-grid">
+            <canvas id="keywordChart"></canvas>
+            <canvas id="formattingChart"></canvas>
+            <canvas id="completenessChart"></canvas>
+            <canvas id="clarityChart"></canvas>
+            <canvas id="fileChart"></canvas>
+            <canvas id="experienceChart"></canvas>
+            <canvas id="skillsChart"></canvas>
+        </div>
+
+        <button class="back-btn" onclick="goBack()">Back to ATS Tracker</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "ats-tracker.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const chartConfig = (ctx, label, score, color) => {
+                return new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: [label],
+                        datasets: [{
+                            label: label,
+                            data: [score],
+                            backgroundColor: color,
+                            borderRadius: 6,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { beginAtZero: true, max: 100 }
+                        }
+                    }
+                });
+            };
+
+            // Example scores
+            const scores = {
+                keyword: 90,
+                formatting: 80,
+                completeness: 70,
+                clarity: 85,
+                file: 100,
+                experience: 75,
+                skills: 88
+            };
+
+            // Colors for each section
+            const colors = {
+                keyword: "#4CAF50",
+                formatting: "#2196F3",
+                completeness: "#FF9800",
+                clarity: "#E91E63",
+                file: "#9C27B0",
+                experience: "#FFEB3B",
+                skills: "#3F51B5"
+            };
+
+            // Create charts in grid format
+            chartConfig(document.getElementById("keywordChart").getContext("2d"), "Keyword Optimization", scores.keyword, colors.keyword);
+            chartConfig(document.getElementById("formattingChart").getContext("2d"), "Resume Formatting", scores.formatting, colors.formatting);
+            chartConfig(document.getElementById("completenessChart").getContext("2d"), "Section Completeness", scores.completeness, colors.completeness);
+            chartConfig(document.getElementById("clarityChart").getContext("2d"), "Bullet Point Clarity", scores.clarity, colors.clarity);
+            chartConfig(document.getElementById("fileChart").getContext("2d"), "File Type & Name", scores.file, colors.file);
+            chartConfig(document.getElementById("experienceChart").getContext("2d"), "Work Experience Details", scores.experience, colors.experience);
+            chartConfig(document.getElementById("skillsChart").getContext("2d"), "Skills Relevance", scores.skills, colors.skills);
+        });
+    </script>
+
+</body>
+</html>
