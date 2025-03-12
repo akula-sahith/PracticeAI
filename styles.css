@@ -283,7 +283,73 @@ body {
     background: linear-gradient(180deg, #16002D 0%, #300058 100%);
     color: white;
     text-align: center;
-}/* Career AI Guidance Chatbot Styles */
+}/* ATS Analysis Page - Professional & Responsive */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, #16002D 0%, #300058 100%);
+    color: white;
+    text-align: center;
+}
+
+.ats-analysis {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Back Button */
+.back-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: white;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Score Interpretation */
+#score-interpretation {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Career AI Guidance Chatbot Styles */
 body {
     margin: 0;
     padding: 0;
@@ -300,7 +366,6 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
 }
 
 h2 {
@@ -314,38 +379,31 @@ h2 {
     padding: 15px;
     border-radius: 8px;
     text-align: left;
-    display: flex;
-    flex-direction: column;
 }
 
 .message {
     margin: 10px 0;
-    padding: 12px;
+    padding: 10px;
     border-radius: 8px;
     max-width: 80%;
-    font-size: 14px;
 }
 
 .user {
     background: #ff47ff;
-    color: white;
     text-align: right;
-    align-self: flex-end;
+    margin-left: auto;
+    color: white;
 }
 
 .bot {
     background: #2196F3;
-    color: white;
     text-align: left;
-    align-self: flex-start;
+    color: white;
 }
 
 .chat-input {
     display: flex;
     margin-top: 15px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
 }
 
 .chat-input input {
@@ -354,7 +412,6 @@ h2 {
     border: none;
     border-radius: 20px;
     outline: none;
-    font-size: 14px;
 }
 
 .chat-input button {
@@ -366,29 +423,9 @@ h2 {
     cursor: pointer;
     margin-left: 10px;
     transition: 0.3s;
-    font-size: 14px;
 }
 
 .chat-input button:hover {
     background: white;
     color: #ff47ff;
-}
-
-/* Back to Home Button */
-.back-home {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.back-home:hover {
-    background: white;
-    color: #16002D;
 }
