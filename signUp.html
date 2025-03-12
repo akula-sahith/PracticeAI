@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AI Resume Analyzer</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script type="module" src="signup.js" defer></script>
+    <style>
+        /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #16002D 0%, #300058 100%);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Sign Up Section */
+.signup {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Heading */
+.signup h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* Input Fields */
+.signup input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Sign Up Button */
+.signup button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #ff47ff;
+  color: white;
+  transition: background 0.3s ease-in-out;
+}
+
+.signup button:hover {
+  background: white;
+  color: black;
+}
+
+/* Login Link */
+.signup p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #ff47ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/* Error Message */
+#signup-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <section class="signup">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Enter your email" required>
+            <input type="password" id="signup-password" placeholder="Enter your password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="index.html">Login</a></p>
+        <p id="signup-error"></p>
+    </section>
+</body>
+</html>
